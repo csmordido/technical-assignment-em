@@ -1,7 +1,7 @@
-const Header = ({ text }) => {
+const Header = ({ headerText }) => {
   return (
     <header>
-      <h1>{text}</h1>
+      <h1>{headerText}</h1>
       <p>All fields are required.</p>
     </header>
   )

@@ -1,5 +1,6 @@
-import Header from './Header';
 import { useFormik } from 'formik';
+import Header from './Header';
+import Field from './Field';
 import validate from '../validate';
 import '../styles/App.scss';
 
@@ -21,87 +22,43 @@ const App = () => {
 
   return (
     <div id="signUpForm">
-      <Header text="Sign up"/>
+      <Header headerText="Sign up"/>
       <form onSubmit={formik.handleSubmit}>
-        <label htmlFor="fullName">Full Name</label>
-        <input 
-          id="fullName" 
+        <Field 
+          label="Full Name"
           name="fullName" 
           type="text" 
           placeholder="Full Name"
-          onChange={formik.handleChange}
-          value={formik.values.fullName}
-          onBlur={formik.handleBlur}
+          formik={formik}
         />
-        {
-          formik.touched.fullName && formik.errors.fullName 
-          ? <p>{formik.errors.fullName}</p>
-          : null
-        }
-
-        <label htmlFor="contactNumber">Contact Number</label>
-        <input 
-          id="contactNumber" 
+        <Field 
+          label="Contact Number"
           name="contactNumber" 
           type="text" 
           placeholder="123-456-7890"
-          onChange={formik.handleChange}
-          value={formik.values.contactNumber}
-          onBlur={formik.handleBlur}
+          formik={formik}
         />
-        {
-          formik.touched.contactNumber && formik.errors.contactNumber
-          ? <p>{formik.errors.contactNumber}</p>
-          : null
-        }
-
-        <label htmlFor="email">Email Address</label>
-        <input 
-          id="email" 
+        <Field 
+          label="Email"
           name="email" 
           type="email" 
           placeholder="example@email.com"
-          onChange={formik.handleChange}
-          value={formik.values.email}
-          onBlur={formik.handleBlur}
+          formik={formik}
         />
-        {
-          formik.touched.email && formik.errors.email
-          ? <p>{formik.errors.email}</p>
-          : null
-        }
-
-        <label htmlFor="address">Street Number, City, Province</label>
-        <input 
-          id="address" 
+        <Field 
+          label="Street Number, City, Province"
           name="address" 
           type="text"
-          onChange={formik.handleChange}
-          value={formik.values.address}
-          onBlur={formik.handleBlur}
+          placeholder=""
+          formik={formik}
         />
-        {
-          formik.touched.address && formik.errors.address
-          ? <p>{formik.errors.address}</p>
-          : null
-        }
-
-        <label htmlFor="postalCode">Postal Code</label>
-        <input 
-          id="postalCode"
+        <Field 
+          label="Postal Code"
           name="postalCode" 
           type="text" 
           placeholder="A1B 2C3"
-          onChange={formik.handleChange}
-          value={formik.values.postalCode}
-          onBlur={formik.handleBlur}
+          formik={formik}
         />
-        {
-          formik.touched.postalCode && formik.errors.postalCode
-          ? <p>{formik.errors.postalCode}</p>
-          : null
-        }
-
         <button type="submit">Submit</button>
       </form>
     </div>

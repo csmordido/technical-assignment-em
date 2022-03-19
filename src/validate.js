@@ -14,7 +14,7 @@ const validate = values => {
   if (!values.email) {
     errors.email = 'Please enter your email address.';
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    errors.email = 'Invalid email address';
+    errors.email = 'Invalid email address.';
   }
 
   if (!values.address) {
@@ -24,7 +24,7 @@ const validate = values => {
   if (!values.postalCode) {
     errors.postalCode = 'Please enter your postal code.';
   } else if (!/^[ABCEGHJ-NPRSTVXY]\d[ABCEGHJ-NPRSTV-Z][ -]?\d[ABCEGHJ-NPRSTV-Z]\d$/i.test(values.postalCode)) {
-    errors.postalCode = 'Invalid postal code';
+    errors.postalCode = 'Invalid postal code.';
   }
   
   return errors;

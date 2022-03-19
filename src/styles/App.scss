@@ -1,6 +1,11 @@
 @import '../styles/reset.scss';
 @import './global.scss';
 
+html,
+body {
+  height: 100%;
+}
+
 html {
   background-color: $white;
   color: $purple;
@@ -9,14 +14,15 @@ html {
 
 body {
   font-size: 1.25rem;
+  position: relative;
 }
 
 #signUpForm {
-  max-width: 40%;
-  margin: 0 auto;
-  padding: 2rem;
-  background-color: $orange;
-  border-radius: 0.5rem;
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 header {
@@ -29,6 +35,18 @@ h1 {
   margin-bottom: 0.8rem;
 }
 
+form {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: $orange;
+  border-radius: 0.5rem;
+}
+
+.field {
+  margin-bottom: 1.5rem;
+}
+
 label,
 input,
 button {
@@ -36,29 +54,61 @@ button {
 }
 
 label {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: $bold;
   margin-bottom: 0.5rem;
 }
 
 input {
   width: 100%;
-  margin-bottom: 1.5rem;
   padding: 0.5rem;
   border: none;
   color: $purple;
   font: $regular 1.25rem $font-family;
   border-radius: 2px;
+  margin-bottom: 0.5rem;
+
+  &:hover,
+  &:focus {
+    outline: 3px solid $teal;
+  }
+
+  &.hasError {
+    outline: 3px solid $red;
+  }
+}
+
+.errorMsg {
+  font-size: 1rem;
+}
+
+.field-contactNumber,
+.field-email {
+  width: calc(50% - 1rem);
+  display: inline-block;
+}
+
+.field-contactNumber {
+  margin-right: 2rem;
+}
+
+.field-postalCode {
+  display: inline-block;
 }
 
 button {
   border: none;
   background-color: $teal;
   color: $white;
-  font-family: $font-family;
-  padding: 0.5rem 1rem;
+  font: $bold 1.25rem $font-family;
+  padding: 0.5rem 4rem;
   margin-top: 2rem;
   border-radius: 2px;
+
+  &:hover,
+  &:focus {
+    background-color: $red;
+  }
 }
 
 ::placeholder {
