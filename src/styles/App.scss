@@ -14,15 +14,24 @@ html {
 
 body {
   font-size: 1.25rem;
-  position: relative;
+
+  // @media only screen and (min-width: $bp-tablet) {
+  //   position: relative;
+  // }
 }
 
 #signUpForm {
-  width: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  max-width: 95%;
+  margin: 5% auto;
+  width: 100%;
+  @media only screen and (min-width: $bp-desktop) {
+    margin: 0 auto;
+    max-width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 header {
@@ -37,14 +46,17 @@ h1 {
 
 form {
   width: 100%;
-  margin: 0 auto;
-  padding: 2rem;
+  padding: 1.25rem;
   background-color: $orange;
   border-radius: 0.5rem;
+  
+  @media only screen and (min-width: $bp-tablet) {
+    padding: 2rem;
+  }
 }
 
 .field {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 label,
@@ -65,7 +77,7 @@ input {
   border: none;
   color: $purple;
   font: $regular 1.25rem $font-family;
-  border-radius: 2px;
+  border-radius: 0.2rem;
   margin-bottom: 0.5rem;
 
   &:hover,
@@ -84,30 +96,41 @@ input {
 
 .field-contactNumber,
 .field-email {
-  width: calc(50% - 1rem);
-  display: inline-block;
+  @media only screen and (min-width: $bp-tablet) {
+    width: calc(50% - 1rem);
+    display: inline-block;
+  }
 }
 
 .field-contactNumber {
-  margin-right: 2rem;
+  @media only screen and (min-width: $bp-tablet) {
+    margin-right: 2rem;
+  }
 }
 
 .field-postalCode {
-  display: inline-block;
+  @media only screen and (min-width: $bp-tablet) {
+    display: inline-block;
+  }
 }
 
 button {
+  width: 100%;
   border: none;
   background-color: $teal;
   color: $white;
   font: $bold 1.25rem $font-family;
   padding: 0.5rem 4rem;
   margin-top: 2rem;
-  border-radius: 2px;
+  border-radius: 0.2rem;
 
   &:hover,
   &:focus {
     background-color: $red;
+  }
+
+  @media only screen and (min-width: $bp-tablet) {
+    width: unset;
   }
 }
 

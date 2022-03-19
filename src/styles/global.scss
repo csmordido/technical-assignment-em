@@ -1,11 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
 
+// colours
 $orange: #f2ac51;
 $teal: #00a3aa;
 $red: #df4e6b;
 $purple: #3a2c52;
 $white: #f9f7eb;
+
+//font styles
 $font-family: 'Oxygen', 'Tahoma', sans-serif;
 $bold: 700;
 $regular: 400;
 $light: 300;
+
+//breakpoints
+$bp-tablet: 768px;
+$bp-desktop: 1104px;
