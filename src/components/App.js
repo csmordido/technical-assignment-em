@@ -22,7 +22,7 @@ const App = () => {
 
   return (
     <div id="signUpForm">
-      <Header headerText="Sign up"/>
+      <Header headerText="Sign Up"/>
       <form onSubmit={formik.handleSubmit}>
         <Field 
           label="Full Name"
