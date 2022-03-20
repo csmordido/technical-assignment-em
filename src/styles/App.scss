@@ -8,7 +8,7 @@ body {
 
 html {
   background-color: $white;
-  color: $purple;
+  color: $dark-blue;
   font: $regular 100% $font-family;
 }
 
@@ -18,7 +18,7 @@ body {
 
 #signUpForm {
   max-width: 95%;
-  margin: 5% auto;
+  margin: 10% auto;
   width: 100%;
   @media only screen and (min-width: $bp-desktop) {
     margin: 0 auto;
@@ -35,7 +35,7 @@ header {
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: $bold;
   margin-bottom: 0.8rem;
 }
@@ -43,7 +43,7 @@ h1 {
 form {
   width: 100%;
   padding: 1.25rem;
-  background-color: $orange;
+  background-color: $light-blue;
   border-radius: 0.5rem;
   position: relative;
   
@@ -72,14 +72,14 @@ input {
   width: 100%;
   padding: 0.5rem;
   border: none;
-  color: $purple;
+  color: $dark-blue;
   font: $regular 1.25rem $font-family;
   border-radius: 0.2rem;
   margin-bottom: 0.5rem;
 
   &:hover,
   &:focus {
-    outline: 3px solid $teal;
+    outline: 3px solid $dark-blue;
   }
 
   &.hasError {
@@ -89,6 +89,7 @@ input {
 
 .errorMsg {
   font-size: 1rem;
+  color: $red;
 }
 
 .field-contactNumber,
@@ -111,10 +112,16 @@ input {
   }
 }
 
+::placeholder {
+  font-weight: $light;
+  color: $dark-blue;
+  opacity: 0.6;
+}
+
 button {
   width: 100%;
   border: none;
-  background-color: $teal;
+  background-color: $dark-blue;
   color: $white;
   font: $bold 1.25rem $font-family;
   padding: 0.5rem 4rem;
@@ -131,16 +138,12 @@ button {
   }
 }
 
-::placeholder {
-  font-weight: $light
-}
-
 .confirmationMsg {
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
-  background-color: $orange;
+  background-color: $light-blue;
   font-size: 2.5rem;
   font-weight: $bold;
   position: absolute;

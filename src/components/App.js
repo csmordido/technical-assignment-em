@@ -21,7 +21,6 @@ const App = () => {
     onSubmit: () => {
       setSubmitted(true);
       formik.resetForm();
-
       setTimeout(() => {
         setSubmitted(false);
       }, 3000);
@@ -30,7 +29,7 @@ const App = () => {
 
   return (
     <div id="signUpForm">
-      <Header headerText="Sign Up"/>
+      <Header headerText="Subscribe to our newsletter"/>
       <form onSubmit={formik.handleSubmit}>
         <Field 
           label="Full Name"
@@ -70,7 +69,7 @@ const App = () => {
         <button type="submit">Submit</button>
         {
           submitted
-          ? <ConfirmationMsg confirmationText="Thanks for signing up!"/>
+          ? <ConfirmationMsg confirmationText="Thanks for subscribing!"/>
           : null
         }
       </form>
