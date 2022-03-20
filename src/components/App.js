@@ -1,10 +1,14 @@
+import { useState } from 'react';
 import { useFormik } from 'formik';
 import Header from './Header';
 import Field from './Field';
+import ConfirmationMsg from './ConfirmationMsg';
 import validate from '../validate';
 import '../styles/App.scss';
 
 const App = () => {
+  const [submitted, setSubmitted] = useState(false);
+
   const formik = useFormik({
     initialValues: {
       fullName: '',
@@ -14,9 +18,13 @@ const App = () => {
       postalCode: ''
     },
     validate,
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: () => {
+      setSubmitted(true);
       formik.resetForm();
+
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 3000);
     },
   });
 
@@ -46,7 +54,7 @@ const App = () => {
           formik={formik}
         />
         <Field 
-          label="Street Number, City, Province"
+          label="Street Address, City, Province"
           name="address" 
           type="text"
           placeholder=""
@@ -60,6 +68,11 @@ const App = () => {
           formik={formik}
         />
         <button type="submit">Submit</button>
+        {
+          submitted
+          ? <ConfirmationMsg confirmationText="Thanks for signing up!"/>
+          : null
+        }
       </form>
     </div>
   )

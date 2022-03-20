@@ -45,6 +45,7 @@ form {
   padding: 1.25rem;
   background-color: $orange;
   border-radius: 0.5rem;
+  position: relative;
   
   @media only screen and (min-width: $bp-tablet) {
     padding: 2rem;
@@ -132,4 +133,28 @@ button {
 
 ::placeholder {
   font-weight: $light
+}
+
+.confirmationMsg {
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: $orange;
+  font-size: 2.5rem;
+  font-weight: $bold;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+
+  @media only screen and (min-width: $bp-tablet) {
+    padding: 2rem;
+  }
+
+  p {
+    text-align: center;
+  }
 }
